@@ -453,11 +453,13 @@ To enable TLS on the HTTP layer, the configuration for the `http` layer certific
 
 `status.phase` indicates the overall phase of the operation for this `ElasticsearchOpsRequest`. It can have the following three values:
 
-| Phase       | Meaning                                                                             |
-| :--------:  | ----------------------------------------------------------------------------------  |
-| Progressing | KubeDB has started to process the Ops request                                       |
-| Successful  | KubeDB has successfully performed all the operations needed for the Ops request     |
-| Failed      | KubeDB has failed while performing the operations needed for the Ops request        |
+| Phase       | Meaning                                                                                 |
+| :--------:  | --------------------------------------------------------------------------------------- |
+| Pending     | KubeDB has not started performing the operation requested in the ElasticsearchOpsRequest|
+| Progressing | KubeDB is currently performing the operation requested in the ElasticsearchOpsRequest   |
+| Progressing | KubeDB has started to process the Ops request                                           |
+| Successful  | KubeDB has successfully performed all the operations needed for the Ops request         |
+| Failed      | KubeDB has failed while performing the operations needed for the Ops request            |
 
 ### status.observedGeneration
 

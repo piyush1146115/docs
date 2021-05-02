@@ -179,11 +179,13 @@ Here, when you specify the resource request for `MySQL` container, the scheduler
 
 `status.phase` indicates the overall phase of the operation for this `MySQLOpsRequest`. It can have the following three values:
 
-|Phase          |Meaning                                                               |
-|---------------|-----------------------------------------------------------------------|
-|Successful     | KubeDB has successfully performed the operation requested in the MySQLOpsRequest |
-|Failed         | KubeDB has failed the operation requested in the MySQLOpsRequest |
-|Denied         | KubeDB has denied the operation requested in the MySQLOpsRequest |
+|Phase          |Meaning                                                                           |
+|---------------|--------------------------------------------------------------------------------- |
+| Pending       | KubeDB has not started performing the operation requested in the MySQLOpsRequest |
+| Progressing   | KubeDB is currently performing the operation requested in the MySQLOpsRequest    |
+| Successful    | KubeDB has successfully performed the operation requested in the MySQLOpsRequest |
+| Failed        | KubeDB has failed the operation requested in the MySQLOpsRequest                 |
+| Denied        | KubeDB has denied the operation requested in the MySQLOpsRequest                 |
 
 #### status.observedGeneration
 

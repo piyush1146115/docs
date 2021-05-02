@@ -70,7 +70,7 @@ secrets:
 Now, we need to create a role that has necessary access permissions for the MongoDB instance named `quick-mongodb`.
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mongodb/custom-rbac/mg-custom-role.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mongodb/custom-rbac/yamls/mg-custom-role.yaml
 role.rbac.authorization.k8s.io/my-custom-role created
 ```
 
@@ -129,7 +129,7 @@ subjects:
 Now, create a MongoDB crd specifying `spec.podTemplate.spec.serviceAccountName` field to `my-custom-serviceaccount`.
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mongodb/custom-rbac/mg-custom-db.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mongodb/custom-rbac/yamls/mg-custom-db.yaml
 mongodb.kubedb.com/quick-mongodb created
 ```
 
@@ -193,7 +193,7 @@ An existing service account can be reused in another MongoDB instance. No new ac
 Now, create MongoDB crd `minute-mongodb` using the existing service account name `my-custom-serviceaccount` in the `spec.podTemplate.spec.serviceAccountName` field.
 
 ```bash
-$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/examples/mongodb/custom-rbac/mg-custom-db-two.yaml
+$ kubectl apply -f https://github.com/kubedb/docs/raw/{{< param "info.version" >}}/docs/guides/mongodb/custom-rbac/yamls/mg-custom-db-two.yaml
 mongodb.kubedb.com/quick-mongodb created
 ```
 
